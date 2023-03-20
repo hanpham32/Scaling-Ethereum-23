@@ -3,6 +3,10 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 
+// Components
+// import Navbar from "../../components/navbar";
+import Sidebar from "../../components/sidebar";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -15,7 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1 className="text-3xl font-bold">Hello World</h1>
+        <Sidebar />
       </main>
     </>
   );
