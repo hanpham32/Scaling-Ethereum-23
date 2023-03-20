@@ -5,7 +5,7 @@ import styles from "@/styles/Home.module.css";
 
 // Components
 // import Navbar from "../../components/navbar";
-import Sidebar from "../../components/sidebar";
+import Sidebar from "../../components/sidebar/sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
