@@ -25,12 +25,11 @@ type AccountProps = {
     profileImg: string
 }
 
-
 function SidebarAccount(props: AccountProps) {
     return (
         <div className="flex flex-col items-center">
-            <p className="mb-2">{props.name}</p>
-            <div className="flex items-center justify-center w-20 h-20 border-2 border-slate-100 rounded-2xl">
+            <p className="mb-2 font-semibold">{props.name}</p>
+            <div className="flex items-center justify-center w-20 h-20 border-2 border-slate-100 rounded-2xl hover:bg-[#effff4] shadow">
                 <Image 
                     src={props.profileImg}
                     alt={props.name + ' logo'}
