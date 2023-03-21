@@ -10,7 +10,7 @@ function Onboarding() {
                         <p className="text-xl ">A family centered multisignature wallet utilizing account abstraction.</p>
                     </div>
                     <div className="flex flex-col items-center lg:flex-row gap-8 mt-16">
-                        <div className="h-80 max-w-xl bg-white rounded-xl p-8">
+                        <div className="max-w-xl bg-white rounded-xl p-8">
                             <Image 
                                 src='icons/plusIcon.svg'
                                 alt='Add Icon'
@@ -21,11 +21,11 @@ function Onboarding() {
                                 <h2 className="text-2xl font-bold text-[#1B2C5D]">Create a FamilyShare</h2>
                                 <p className="text-[#1B2C5D]">A new Safe that is controlled by one or multiple owners.</p>
                             </div>
-                            <button className="h-12 w-64 bg-[#1B2C5D] font-semibold rounded-xl text-lg text-white hover:opacity-80 ease-in duration-200">
+                            <button className="py-2 px-4 bg-[#1B2C5D] font-semibold rounded-xl text-lg text-white hover:opacity-80 ease-in duration-200">
                                 Create new FamilyShare
                             </button>
                         </div>
-                        <div className="h-80 max-w-xl bg-white rounded-xl p-8">
+                        <div className=" max-w-xl bg-white rounded-xl p-8">
                             <Image 
                                 src='icons/northEastArrowIcon.svg'
                                 alt='Arrow Icon'
@@ -36,7 +36,7 @@ function Onboarding() {
                                 <h2 className="text-2xl font-bold text-[#1B2C5D]">Add existing FamilyShare</h2>
                                 <p className="text-[#1B2C5D]">Already have a Safe? Add your Safe using your Safe address.</p>
                             </div>
-                            <button className="h-12 w-64 border-[#1B2C5D] border-2 font-semibold rounded-xl text-lg text-[#1B2C5D] hover:bg-slate-200 ease-in duration-200">
+                            <button className="py-2 px-4 border-[#1B2C5D] border-2 font-semibold rounded-xl text-lg text-[#1B2C5D] hover:bg-slate-200 ease-in duration-200">
                                 Add existing FamilyShare
                             </button>
                         </div>
