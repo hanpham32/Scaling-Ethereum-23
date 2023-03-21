@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 // Components
 import Navbar from "../../components/navbar";
@@ -24,9 +25,7 @@ function NewFamilyShare() {
                           <p className="text-[#1B2C5D]">The connected wallet will pay the network fees for the Safe creation.</p>
                         </div>
                       </div>
-                      <button className="py-2 px-4 bg-[#1B2C5D] font-semibold rounded-xl text-lg text-white hover:opacity-80 ease-in duration-200">
-                        Connect
-                      </button>
+                      <ConnectButton />
                   </div>
                 </div>
             </div>
