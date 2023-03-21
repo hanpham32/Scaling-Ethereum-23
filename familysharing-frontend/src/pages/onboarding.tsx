@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Onboarding() {
     return (
-        <div className="min-h-screen bg-gradient-to-r from-[#1DEED5] to-[#00EBFF] ">
+        <div className="flex items-center min-h-screen bg-gradient-to-r from-[#1DEED5] to-[#00EBFF] ">
             <div className="flex justify-center items-center max-w-7xl m-auto">
                 <div className='px-6 py-32'>
                     <div>
@@ -10,9 +10,9 @@ function Onboarding() {
                         <p className="text-xl ">A family centered multisignature wallet utilizing account abstraction.</p>
                     </div>
                     <div className="flex flex-col items-center lg:flex-row gap-8 mt-16">
-                        <div className="h-80 w-[500px] bg-white rounded-xl p-8">
+                        <div className="h-80 max-w-xl bg-white rounded-xl p-8">
                             <Image 
-                                src='/plusIcon.svg'
+                                src='icons/plusIcon.svg'
                                 alt='Add Icon'
                                 width={60}
                                 height={60}
@@ -25,9 +25,9 @@ function Onboarding() {
                                 Create new FamilyShare
                             </button>
                         </div>
-                        <div className="h-80 w-[500px] bg-white rounded-xl p-8">
+                        <div className="h-80 max-w-xl bg-white rounded-xl p-8">
                             <Image 
-                                src='/northEastArrowIcon.svg'
+                                src='icons/northEastArrowIcon.svg'
                                 alt='Arrow Icon'
                                 width={60}
                                 height={60}

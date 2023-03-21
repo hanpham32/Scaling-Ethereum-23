@@ -4,19 +4,19 @@ import Image from 'next/image'
 const accounts = [
     {
         "name": "Seb",
-        "profileImg": "account1.svg"
+        "profileImg": "icons/account1.svg"
     },
     {
         "name": "Han",
-        "profileImg": "account2.svg"
+        "profileImg": "icons/account2.svg"
     },
     {
         "name": "Kimlong",
-        "profileImg": "account3.svg"
+        "profileImg": "icons/account3.svg"
     },
     {
         "name": "Matt",
-        "profileImg": "account4.svg"
+        "profileImg": "icons/account4.svg"
     }
 ]
 
