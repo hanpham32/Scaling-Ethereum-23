@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function Onboarding() {
     return (
@@ -6,7 +7,7 @@ function Onboarding() {
             <div className="flex justify-center items-center max-w-7xl m-auto">
                 <div className='px-6 py-32'>
                     <div>
-                        <h1 className="text-5xl font-bold text-[#1B2C5D] mb-4">Welcome to FamilyShare</h1>
+                        <h1 className="text-5xl font-bold text-[#1B2C5D] mb-2">Welcome to FamilyShare</h1>
                         <p className="text-xl ">A family centered multisignature wallet utilizing account abstraction.</p>
                     </div>
                     <div className="flex flex-col items-center lg:flex-row gap-8 mt-16">
@@ -21,9 +22,11 @@ function Onboarding() {
                                 <h2 className="text-2xl font-bold text-[#1B2C5D]">Create a FamilyShare</h2>
                                 <p className="text-[#1B2C5D]">A new Safe that is controlled by one or multiple owners.</p>
                             </div>
-                            <button className="py-2 px-4 bg-[#1B2C5D] font-semibold rounded-xl text-lg text-white hover:opacity-80 ease-in duration-200">
-                                Create new FamilyShare
-                            </button>
+                            <Link href='new-familyShare'>
+                                <button className="py-2 px-4 bg-[#1B2C5D] font-semibold rounded-xl text-lg text-white hover:opacity-80 hover:scale-110 ease-in duration-200">
+                                    Create new FamilyShare
+                                </button>
+                            </Link>
                         </div>
                         <div className=" max-w-xl bg-white rounded-xl p-8">
                             <Image 
@@ -36,7 +39,7 @@ function Onboarding() {
                                 <h2 className="text-2xl font-bold text-[#1B2C5D]">Add existing FamilyShare</h2>
                                 <p className="text-[#1B2C5D]">Already have a Safe? Add your Safe using your Safe address.</p>
                             </div>
-                            <button className="py-2 px-4 border-[#1B2C5D] border-2 font-semibold rounded-xl text-lg text-[#1B2C5D] hover:bg-slate-200 ease-in duration-200">
+                            <button className="py-2 px-4 border-[#1B2C5D] border-2 font-semibold rounded-xl text-lg text-[#1B2C5D] hover:bg-slate-200 hover:scale-110 ease-in duration-200">
                                 Add existing FamilyShare
                             </button>
                         </div>

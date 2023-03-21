@@ -1,11 +1,21 @@
+import Image from "next/image"
+import Link from "next/link"
+
 function Navbar() {
     return (
-      <div className="flex p-3 bg-white border-[1px] border-slate-200">
-        <div>
-            <p className="text-2xl font-semibold">FamilyShare</p>
+    <div className="flex py-3 px-6 bg-white shadow">
+      <Link href='/'>
+        <div className="flex">
+          <Image 
+            src='/icons/homeIcon.svg'
+            alt='home Icon'
+            width={36}
+            height={36}
+          />
+          <p className="text-2xl font-semibold ml-4">FamilyShare</p>
         </div>
-        <div></div>
-      </div>
+      </Link>
+    </div>
     )
 }
 

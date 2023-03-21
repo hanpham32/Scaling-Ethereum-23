@@ -29,16 +29,16 @@ export default function Home() {
               className='m-auto mb-10'
             />
             <div className="text-center mb-16">
-              <h1 className="text-5xl font-bold text-[#1B2C5D]">FamilyShare</h1>
+              <h1 className="text-5xl font-bold py-2 bg-gradient-to-r from-[#00EBFF] via-[#1DEED5] to-[#e81cff] bg-clip-text text-transparent">FamilyShare</h1>
               <h1 className="text-2xl font-semibold text-[#1B2C5D]">Share your next generation wallet with your loved ones.</h1>
             </div>
             <div className="flex justify-around">
               <Link href='onboarding'>
-                <button className="py-2 w-32 bg-[#1B2C5D] font-semibold rounded-xl text-lg text-white hover:opacity-80 ease-in duration-200">
+                <button className="py-2 w-32 bg-[#1B2C5D] font-semibold rounded-xl text-lg text-white hover:opacity-80 hover:scale-110 ease-in duration-200">
                   Parents
                 </button>
               </Link>
-              <button className="py-2 w-32 bg-[#1B2C5D] font-semibold rounded-xl text-lg text-white hover:opacity-80 ease-in duration-200">
+              <button className="py-2 w-32 bg-[#1B2C5D] font-semibold rounded-xl text-lg text-white hover:opacity-80 hover:scale-110 ease-in duration-200">
                 Kids
               </button>
             </div>
