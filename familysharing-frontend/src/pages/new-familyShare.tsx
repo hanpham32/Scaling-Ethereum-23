@@ -1,4 +1,7 @@
-import Navbar from "../../components/navbar"
+import Image from "next/image";
+
+// Components
+import Navbar from "../../components/navbar";
 
 function NewFamilyShare() {
   return (
@@ -8,10 +11,18 @@ function NewFamilyShare() {
             <div className="items-center max-w-7xl m-auto">
                 <div className='px-6 py-16'>
                   <h1 className="text-3xl font-bold text-[#1B2C5D] mb-6">Create new FamilyShare</h1>
-                  <div className="max-w-xl bg-white rounded-xl p-8">
-                      <div className="mb-6">
+                  <div className="bg-white rounded-xl p-8">
+                      <div className="flex mb-10">
+                        <Image
+                          src='icons/1Icon.svg'
+                          alt='step 1'
+                          width={30}
+                          height={30}
+                        />
+                        <div className="ml-4">
                           <h2 className="text-2xl font-bold text-[#1B2C5D]">Connect Wallet</h2>
                           <p className="text-[#1B2C5D]">The connected wallet will pay the network fees for the Safe creation.</p>
+                        </div>
                       </div>
                       <button className="py-2 px-4 bg-[#1B2C5D] font-semibold rounded-xl text-lg text-white hover:opacity-80 ease-in duration-200">
                         Connect
