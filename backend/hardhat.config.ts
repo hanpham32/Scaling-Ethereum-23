@@ -1,0 +1,19 @@
+import { HardhatUserConfig } from "hardhat/config";
+import "@nomicfoundation/hardhat-toolbox";
+import "@nomiclabs/hardhat-etherscan"
+import "dotenv";
+
+const config: HardhatUserConfig = {
+  solidity: "0.8.18",
+  networks: {
+   goerli: {
+    url: process.env.ALCHEMY_ENDPOINT,
+    accounts: [process.env.PRIVATE_KEY],
+   }
+  },
+  etherscan: {
+    apiKey: process.env.API_KEY
+  }
+};
+
+export default config;
