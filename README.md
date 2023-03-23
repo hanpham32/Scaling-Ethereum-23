@@ -6,12 +6,15 @@ Scaling Ethereum 2023 Hackathon Submission Project
 
 Smart Contract address:
 
+## Overview
+
 ## Link to video demo
 
 ## dApp functionalities
 
-`Hello from Han`
-`Hello from Kimlong`
-`Hello from Matt`
-`Hello from Sebastian 🫶`
+## The team
+Hello from `Han`
+Hello from `Kimlong`
+Hello from `Matt`
+Hello from `Sebastian 🫶`
 `Compiling ...`
