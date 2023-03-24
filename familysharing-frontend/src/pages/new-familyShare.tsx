@@ -1,83 +1,59 @@
-import Image from "next/image";
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from "wagmi";
-import LoginIcon from '@mui/icons-material/Login';
-import { TextField } from "@mui/material";
+import { useState, useEffect } from "react";
 
 // Components
-import Navbar from "../../components/navbar";
-
-function StepOneConnectWalletCard() {
-  return (
-    <div className="flex flex-col h-96 bg-white rounded-xl">
-      <div className="flex p-8 border-b-2">
-        <Image
-          src='icons/1Icon.svg'
-          alt='step 1'
-          width={30}
-          height={30}
-        />
-        <div className="ml-4">
-          <h2 className="text-2xl font-bold text-[#1B2C5D]">Connect Wallet</h2>
-          <p className="text-[#1B2C5D]">The connected wallet will pay the network fees for the Safe creation.</p>
-        </div>
-      </div>
-      <div className="grow flex flex-col justify-center items-center">
-        <LoginIcon className="w-12 h-12 my-8"/>
-        <div className="mb-8">
-          <ConnectButton />
-        </div> 
-      </div>
-    </div>
-  )
-}
-
-function StepTwoConnectWalletCard() {
-  return (
-    <div className="flex flex-col h-96 bg-white rounded-xl">
-      <div className="flex p-8 border-b-2">
-        <Image
-          src='icons/1Icon.svg'
-          alt='step 1'
-          width={30}
-          height={30}
-        />
-        <div className="ml-4">
-          <h2 className="text-2xl font-bold text-[#1B2C5D]">Name your FamilyShare</h2>
-        </div>
-      </div>
-      <div className="grow flex flex-col justify-center items-center">
-      <TextField
-          label="Name"
-          defaultValue="My FamilySafe"
-        />
-        <div className="mb-8">
-        </div> 
-      </div>
-    </div>
-  )
-}
-
+import Navbar from "../components/navbar";
+import StepOneCreateFamilyShare from "@/pageComponents/new-FamilyShare/StepOneCreateFamilyShare";
+import StepTwoCreateFamilyShare from "@/pageComponents/new-FamilyShare/StepTwoCreateFamilyShare";
+import StepThreeCreateFamilyShare from "@/pageComponents/new-FamilyShare/StepThreeCreateFamilyShare";
 
 function NewFamilyShare() {
-
-
+  const [createFamilyShareStep, setCreateFamilyShareStep] = useState(1);
   const { isConnected } = useAccount();
-  console.log(isConnected);
+
+  useEffect(() => {
+    if (isConnected) {
+      setCreateFamilyShareStep(2);
+    }
+  }, [isConnected]);
+
+  function setCurrentStep(step: number) {
+    setCreateFamilyShareStep(step)
+  }
+  
+  const createFamilyShareCard = determineCardToRender();
+
+  function determineCardToRender() {
+    if (createFamilyShareStep === 1) {
+      return (<StepOneCreateFamilyShare currentStep={createFamilyShareStep} setCurrentStep={setCurrentStep}/>);
+    } else if (createFamilyShareStep === 2) {
+      return (<StepTwoCreateFamilyShare currentStep={createFamilyShareStep} setCurrentStep={setCurrentStep}/>);
+    } else if (createFamilyShareStep === 3) {
+      return (<StepThreeCreateFamilyShare currentStep={createFamilyShareStep} setCurrentStep={setCurrentStep}/>)
+    } else {
+      return (
+        <div>
+          <div className="flex items-center justify-center h-128 bg-white rounded-xl relative">
+            <h1 className="text-3xl font-bold text-[#1B2C5D] mb-6">Under construction, come back soon!</h1>
+          </div>
+        </div>
+      )
+    }
+  }
 
   return (
     <div>
       <Navbar />
       <div className="min-h-screen bg-gradient-to-r from-[#1DEED5] to-[#00EBFF] ">
-            <div className="items-center max-w-7xl m-auto">
-                <div className='px-6 py-16'>
-                  <h1 className="text-3xl font-bold text-[#1B2C5D] mb-6">Create new FamilyShare</h1>
-                  {!isConnected ? <StepOneConnectWalletCard /> : <StepTwoConnectWalletCard />}
-                </div>
-            </div>
+        <div className="items-center max-w-7xl m-auto">
+          <div className='px-6 py-16'>
+            <h1 className="text-3xl font-bold text-[#1B2C5D] mb-6">Create new FamilyShare</h1>
+            {createFamilyShareCard}
+          </div>
+        </div>
       </div>
     </div>
   )
 }
 
-export default NewFamilyShare
+export default NewFamilyShare;
