@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from "wagmi";
 import { Login, ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
@@ -14,15 +15,26 @@ type FamilyShareStepProps = {
 
 
 function StepArrowsIcons(props: FamilyShareStepProps) {
-
+  const router = useRouter();
   const currentStep = props.currentStep;
+
+  function handleArrowClick(event: React.MouseEvent<HTMLButtonElement>) {
+    if (event.currentTarget.id === "back-button") {
+      if (currentStep <= 1) {
+        router.push('/onboarding')
+      }
+      props.setCurrentStep(currentStep - 1)
+    } else {
+      props.setCurrentStep(currentStep + 1)
+    }
+  }
 
   return(
     <div className="flex gap-4 absolute bottom-6 right-6">
-      <button onClick={() => props.setCurrentStep(currentStep - 1)}>
+      <button id="back-button" onClick={handleArrowClick}>
         <ArrowBackIosNew className="w-8 h-8"/>
       </button>
-      <button onClick={() => props.setCurrentStep(currentStep + 1)}>
+      <button id="forward-button" onClick={handleArrowClick}>
         <ArrowForwardIos className="w-8 h-8"/>
       </button>
     </div>
