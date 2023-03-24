@@ -7,12 +7,12 @@ import { TextField } from "@mui/material";
 import { useState, useEffect } from "react";
 
 // Components
-import Navbar from "../../components/navbar";
+import Navbar from "../components/navbar";
+
 type FamilyShareStepProps = {
   currentStep: number
   setCurrentStep: (step: number) => void
 }
-
 
 function StepArrowsIcons(props: FamilyShareStepProps) {
   const router = useRouter();
