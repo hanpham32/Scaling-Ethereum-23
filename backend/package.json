@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "npx hardhat compile",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx hardhat test ./test/MultiSigWallet.test.ts",
     "deploy:scrollTestnet": "npx hardhat run --network scrollTestnet scripts/deploy.ts"
   },
   "author": "",
@@ -18,11 +18,12 @@
     "@nomicfoundation/hardhat-toolbox": "^2.0.2",
     "@nomiclabs/hardhat-ethers": "^2.2.2",
     "@nomiclabs/hardhat-etherscan": "^3.1.7",
+    "@openzeppelin/contracts": "^4.8.2",
     "@typechain/ethers-v5": "^10.2.0",
     "@typechain/hardhat": "^6.1.5",
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
-    "@types/node": "^18.15.5",
+    "@types/node": "^18.15.7",
     "alchemy-sdk": "^2.6.1",
     "chai": "^4.3.7",
     "ethers": "^5.7.2",
