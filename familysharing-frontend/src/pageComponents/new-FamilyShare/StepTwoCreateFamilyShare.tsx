@@ -22,7 +22,7 @@ function StepTwoCreateFamilyShare(props: FamilyShareStepProps) {
             <p className="text-[#1B2C5D]">A name for your FamilyShare</p>
           </div>
         </div>
-        <div className="grow flex flex-col justify-center p-8">
+        <div className="grow flex flex-col p-8">
           <label htmlFor='Name' className="mb-2">
             Name of new FamilyShare
           </label>
