@@ -39,7 +39,7 @@ function Onboarding() {
                                 <h2 className="text-2xl font-bold text-primary-color">Add existing FamilyShare</h2>
                                 <p className="text-primary-color">Already have a Safe? Add your Safe using your Safe address.</p>
                             </div>
-                            <button className="py-2 px-4 text-primary-color border-2 font-semibold rounded-xl text-lg hover:bg-slate-200 hover:scale-110 ease-in duration-200">
+                            <button className="py-2 px-4 text-primary-color border-2 border-primary-color font-semibold rounded-xl text-lg hover:bg-slate-200 hover:scale-110 ease-in duration-200">
                                 Add existing FamilyShare
                             </button>
                         </div>
