@@ -21,7 +21,7 @@ function index() {
                         <p className="text-xl text-center md:text-left">Share your next generation wallet with loved ones</p>
                     </div>
                     <div className="flex justify-center md:justify-start gap-4">
-                        <Link href='onboarding'>
+                        <Link href='sign-up'>
                             <button className="py-2 w-32 bg-[#1B2C5D] font-semibold rounded-xl text-lg text-white hover:opacity-80 hover:scale-110 ease-in duration-200">
                                 Sign Up
                             </button>
@@ -36,7 +36,7 @@ function index() {
                 <div>
                     <Image 
                         src='/parentDashboard.png'
-                        alt='home Icon'
+                        alt='parent dashboard'
                         width={1000}
                         height={512}
                         className=''
