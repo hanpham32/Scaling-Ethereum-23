@@ -90,6 +90,8 @@ function StepThreeCreateFamilyShare(props: FamilyShareStepProps) {
 
   function handleSubmit(event: any) {
     event.preventDefault();
+    const formResult = {numberOfOwners};
+    console.log(formResult);
   }
 
   return (
