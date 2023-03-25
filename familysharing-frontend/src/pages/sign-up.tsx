@@ -69,9 +69,9 @@ function SignUp() {
                         </div>
                     </div>
                     <div className="flex justify-center mt-12">
-                        <Link href='sign-up'>
-                            <button className="py-2 w-32 bg-[#1B2C5D] font-semibold rounded-xl text-lg text-white hover:opacity-80 hover:scale-110 ease-in duration-200">
-                                Sign Up
+                        <Link href='onboarding'>
+                            <button className="py-2 w-40 bg-[#1B2C5D] font-semibold rounded-xl text-lg text-white hover:opacity-80 hover:scale-110 ease-in duration-200">
+                                Create Account
                             </button>
                         </Link>
                     </div>
