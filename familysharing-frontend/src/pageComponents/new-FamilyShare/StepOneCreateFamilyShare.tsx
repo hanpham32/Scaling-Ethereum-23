@@ -19,8 +19,8 @@ function StepOneCreateFamilyShare(props: FamilyShareStepProps) {
             height={30}
           />
           <div className="ml-4">
-            <h2 className="text-2xl font-bold text-[#1B2C5D]">Connect Wallet</h2>
-            <p className="text-[#1B2C5D]">The connected wallet will pay the network fees for the Safe creation.</p>
+            <h2 className="text-2xl font-bold text-primary-color">Connect Wallet</h2>
+            <p className="text-primary-color">The connected wallet will pay the network fees for the Safe creation.</p>
           </div>
         </div>
         <div className="grow flex flex-col justify-center items-center">
