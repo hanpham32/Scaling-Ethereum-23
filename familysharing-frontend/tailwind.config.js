@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'primary-color': '#1B2C5D'
+      },
       height: {
         '128': '32rem'
       }

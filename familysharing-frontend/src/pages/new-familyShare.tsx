@@ -34,7 +34,7 @@ function NewFamilyShare() {
       return (
         <div>
           <div className="flex items-center justify-center h-128 bg-white rounded-xl relative">
-            <h1 className="text-3xl font-bold text-[#1B2C5D] mb-6">Under construction, come back soon!</h1>
+            <h1 className="text-3xl font-bold text-primary-color mb-6">Under construction, come back soon!</h1>
           </div>
         </div>
       )
@@ -47,7 +47,7 @@ function NewFamilyShare() {
       <div className="min-h-screen bg-gradient-to-r from-[#1DEED5] to-[#00EBFF] ">
         <div className="items-center max-w-7xl m-auto">
           <div className='px-6 py-16'>
-            <h1 className="text-3xl font-bold text-[#1B2C5D] mb-6">Create new FamilyShare</h1>
+            <h1 className="text-3xl font-bold text-primary-color mb-6">Create new FamilyShare</h1>
             {createFamilyShareCard}
           </div>
         </div>

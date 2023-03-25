@@ -73,7 +73,7 @@ function StepThreeCreateFamilyShare(props: FamilyShareStepProps) {
   }
 
     return (
-      <div className="flex flex-col min-h-128 bg-white rounded-xl relative">
+      <div className="flex flex-col bg-white rounded-xl relative">
         <div className="flex p-8 border-b-2">
           <Image
             src='icons/3Icon.svg'
@@ -82,8 +82,8 @@ function StepThreeCreateFamilyShare(props: FamilyShareStepProps) {
             height={30}
           />
           <div className="ml-4">
-            <h2 className="text-2xl font-bold text-[#1B2C5D]">Owners & Confirmations</h2>
-            <p className="text-[#1B2C5D]">Set the primary owners of this FamilyShare</p>
+            <h2 className="text-2xl font-bold text-primary-color">Owners & Confirmations</h2>
+            <p className="text-primary-color">Set the primary owners of this FamilyShare</p>
           </div>
         </div>
         <div className="grow flex flex-col p-8">
@@ -97,7 +97,7 @@ function StepThreeCreateFamilyShare(props: FamilyShareStepProps) {
             />
             <p className="text-lg ml-2 text-[#00CBCB]">Add another owner</p>
           </button>
-          <div className="flex items-center">
+          <div className="flex items-center mb-8">
             <p>Any transaction requires the confirmation of: </p>
             <SelectConfirmations />
             <p>out of X owners(s)</p>

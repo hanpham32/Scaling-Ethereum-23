@@ -18,8 +18,8 @@ function StepTwoCreateFamilyShare(props: FamilyShareStepProps) {
             height={30}
           />
           <div className="ml-4">
-            <h2 className="text-2xl font-bold text-[#1B2C5D]">Name</h2>
-            <p className="text-[#1B2C5D]">A name for your FamilyShare</p>
+            <h2 className="text-2xl font-bold text-primary-color">Name</h2>
+            <p className="text-primary-color">A name for your FamilyShare</p>
           </div>
         </div>
         <div className="grow flex flex-col p-8">
