@@ -1,13 +1,6 @@
 import Image from "next/image";
 import { useState, ChangeEvent } from "react";
 import { TextField } from "@mui/material";
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-
-// Components
-import StepArrowsIcons from "./StepArrowIcons";
 
 // Interfaces
 import { FamilyShareStepProps } from "@/interfaces/FamilyShareStepProps";
@@ -136,7 +129,6 @@ function StepThreeCreateFamilyShare(props: FamilyShareStepProps) {
         </form>
       
       </div>
-      {/* <StepArrowsIcons currentStep={props.currentStep} setCurrentStep={props.setCurrentStep}/> */}
     </div>
   )
 }
