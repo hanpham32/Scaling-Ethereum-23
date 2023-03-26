@@ -1,19 +1,24 @@
 import { ethers } from "hardhat";
+import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const unlockTime = currentTimestampInSeconds + 60;
+  let owner1 = `0x6E2EfaAb4aFE34e3b6AA7db9fAFaF822508AAeC9`;
+  let owner2 = `0xe720DF46FA5d85C6b481559F29F8E0264272A9fc`;
+  // [owner1, owner2] = await ethers.getSigners();
+  const list_owners= [
+    owner1,
+    owner2,
+  ]
+  const MultiSigWallet = await ethers.getContractFactory("MultiSigWallet");
+  const wallet = await MultiSigWallet.deploy(list_owners, 2);
 
-  const lockedAmount = ethers.utils.parseEther("0.001");
+  await wallet.deployed();
 
-  const Lock = await ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+  console.log (`deployd to ${wallet.address}`)
 
-  await lock.deployed();
-
-  console.log(
-    `Lock with ${ethers.utils.formatEther(lockedAmount)}ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
-  );
+  // console.log(
+    // `Lock with ${ethers.utils.formatEther(lockedAmount)}ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
+  // );
 }
 
 // We recommend this pattern to be able to use async/await everywhere
