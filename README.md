@@ -14,6 +14,7 @@ Using FamilyShare, parents can take full control of their digital assets without
 FamilyShare aims to abstract away blockchain's complexity as much as possible. Designed with user experience in mind, FamilyShare uses account abstraction to allow users to easily interact with the wallet using their familiar authentication methods (email, biometrics, etc.).
 
 ## Link to video demo
+[FamilyShare Demo](https://ethglobal.com/showcase/familyshare-pmr7b)
 
 ## dApp functionalities
 We built the front end using Next.js and tailwind. Our designer used Figma to prototype different components and pages for the web app. We used RainbowKit for wallet connection and used ethers.js to interact with smart contracts.
