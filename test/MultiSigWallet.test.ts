@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { ethers } from "hardhat";
-import { MultiSigWallet } from "../typechain-types/MultiSigWallet";
+import { MultiSigWallet } from "../typechain-types/main/MultiSigWallet";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { BigNumber } from "ethers";
 import { ContractFactory } from "ethers";

@@ -5,6 +5,7 @@
 Scaling Ethereum 2023 Hackathon Submission Project
 
 Smart Contract address:
+0x9d6e70d077aa8491382ea4be9c724f5af02e2674b3a8d9ed7a09c6166d244461
 
 ## Overview
 FamilyShare is a project aimed at building a highly customizable, secure, and user-friendly multi-sig family-shared cryptocurrency wallet. It satisfies the needs of families who wish to manage their digital assets collectively while maintaining a high level of control, transparency, and security.
