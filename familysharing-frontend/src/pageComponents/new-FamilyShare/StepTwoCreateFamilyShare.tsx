@@ -26,8 +26,10 @@ function StepTwoCreateFamilyShare(props: FamilyShareStepProps) {
           <label htmlFor='Name' className="mb-2">
             Name of new FamilyShare
           </label>
-          <TextField id="Name" label="My Family Share" variant="outlined" className="max-w-md mb-8"/>
-          <p className="mb-2">The FamilyShare will be on:</p>
+          <div className="max-w-md">
+            <TextField id="Name" label="My Family Share" variant="outlined" className="w-full"/>
+          </div>
+          <p className="mt-8 mb-2">The FamilyShare will be on:</p>
           <ConnectButton showBalance={false} accountStatus="avatar"/>
         </div>
         <StepArrowsIcons currentStep={props.currentStep} setCurrentStep={props.setCurrentStep}/>
