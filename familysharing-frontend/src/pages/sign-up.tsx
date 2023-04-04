@@ -46,7 +46,7 @@ function SignUp() {
                                 <p className="text-primary-color mr-6">Are you a parent or child?</p>
                                 <div className="flex gap-4">
                                     <div className="flex items-center space-x-2">
-                                        <input type="radio" id="parentRadio" checked name="radioGroup1" className="h-4 w-4 rounded-full border-gray-300 text-primary-600 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 focus:ring-offset-0 disabled:cursor-not-allowed disabled:text-gray-400" />
+                                        <input type="radio" id="parentRadio" name="radioGroup1" className="h-4 w-4 rounded-full border-gray-300 text-primary-600 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 focus:ring-offset-0 disabled:cursor-not-allowed disabled:text-gray-400" />
                                         <label htmlFor="parentRadio" className="text-sm font-medium text-gray-700">Parent</label>
                                     </div>
                                     <div className="flex items-center space-x-2">
