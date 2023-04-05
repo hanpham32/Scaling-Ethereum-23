@@ -104,6 +104,13 @@ function StepThreeCreateFamilyShare(props: FamilyShareStepProps) {
     // props.setCurrentStep(1);
   }
 
+
+  function handleRemoveOwner() {
+    setNumberOfOwners(prev => prev - 1);
+    setOwnerInfoList(prevList => prevList.slice(0, -1));
+  }
+  
+
   return (
     <div className="flex flex-col bg-white rounded-xl relative">
       <div className="flex p-8 border-b-2">
@@ -122,15 +129,26 @@ function StepThreeCreateFamilyShare(props: FamilyShareStepProps) {
         
         <form onSubmit={handleSubmit}>
           {ownersInputList}
-          <button type="button" className="flex items-center mb-12" onClick={() => setNumberOfOwners((prev) => prev + 1)}>  
-            <Image
-              src='icons/plusIcon.svg'
-              alt='step 1'
-              width={30}
-              height={30}
-            />
-            <p className="text-lg ml-2 text-[#00CBCB]">Add another owner</p>
-          </button>
+          <div className="flex flex-col sm:flex-row justify-between max-w-sm">
+            <button type="button" className="flex items-center mb-12" onClick={() => setNumberOfOwners((prev) => prev + 1)}>  
+              <Image
+                src='icons/plusIcon.svg'
+                alt='step 1'
+                width={30}
+                height={30}
+              />
+              <p className="text-lg ml-2 text-[#00CBCB]">Add another owner</p>
+            </button>
+            {numberOfOwners > 1 && <button type="button" className="flex items-center mb-12" onClick={handleRemoveOwner}>  
+              <Image
+                src='icons/minusIcon.svg'
+                alt='step 1'
+                width={30}
+                height={30}
+              />
+              <p className="text-lg ml-2 text-[#00CBCB]">Remove Owner</p>
+            </button>}
+          </div>
           <div className="flex items-center mb-8">
             <p className="mr-2">Any transaction requires the confirmation of: </p>
               <div className="max-w-xs">
