@@ -5,20 +5,23 @@ import { TextField } from "@mui/material";
 // Interfaces
 import { FamilyShareStepProps } from "@/interfaces/FamilyShareStepProps";
 
-interface Props {
-  index: number;
+interface OwnerInfo {
+  name: string;
+  address: string;
 }
 
-function PrimaryOwnersInput({ index }: Props) {
+function PrimaryOwnersInput({ index, onChange }: { index: number; onChange: (info: OwnerInfo) => void }) {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
+    onChange({ name: event.target.value, address });
   };
 
   const handleAddressChange = (event: ChangeEvent<HTMLInputElement>) => {
     setAddress(event.target.value);
+    onChange({ name, address: event.target.value });
   };
 
   return (
@@ -56,6 +59,8 @@ function PrimaryOwnersInput({ index }: Props) {
 
 function StepThreeCreateFamilyShare(props: FamilyShareStepProps) {  
   const [numberOfOwners, setNumberOfOwners] = useState(1);
+  const [ownerInfoList, setOwnerInfoList] = useState<OwnerInfo[]>([{ name: "", address: "" }]);
+  const [confirmations, setConfirmations] = useState<number>(1);
 
   console.log(numberOfOwners);
 
@@ -63,7 +68,16 @@ function StepThreeCreateFamilyShare(props: FamilyShareStepProps) {
     const inputs = []
     for (let i = 1; i <= numberOfOwners; i++) {
       inputs.push(
-          <PrimaryOwnersInput key={i} index={i}/>)
+        <PrimaryOwnersInput
+        key={i}
+        index={i}
+        onChange={(info: OwnerInfo) => {
+          const newOwnerInfoList = [...ownerInfoList];
+          newOwnerInfoList[i] = info;
+          setOwnerInfoList(newOwnerInfoList);
+        }}
+      />
+    );
     }
     return <>{inputs}</>
   }
@@ -74,7 +88,9 @@ function StepThreeCreateFamilyShare(props: FamilyShareStepProps) {
     const options = []
     for (let i = 1; i <= numberOfOwners; i++) {
       options.push(
-        <option key={`confirmation ${i}`} value={i}>{i}</option>)
+        <option key={`confirmation ${i}`} value={i}>
+          {i}
+        </option>)
     }
     return <>{options}</>
   }
@@ -83,9 +99,17 @@ function StepThreeCreateFamilyShare(props: FamilyShareStepProps) {
 
   function handleSubmit(event: any) {
     event.preventDefault();
-    const formResult = {numberOfOwners};
+    const formResult = { ownerInfoList, confirmations };
     console.log(formResult);
+    // props.setCurrentStep(1);
   }
+
+
+  function handleRemoveOwner() {
+    setNumberOfOwners(prev => prev - 1);
+    setOwnerInfoList(prevList => prevList.slice(0, -1));
+  }
+  
 
   return (
     <div className="flex flex-col bg-white rounded-xl relative">
@@ -105,20 +129,36 @@ function StepThreeCreateFamilyShare(props: FamilyShareStepProps) {
         
         <form onSubmit={handleSubmit}>
           {ownersInputList}
-          <button className="flex items-center mb-12" onClick={() => setNumberOfOwners((prev) => prev + 1)}>
-            <Image
-              src='icons/plusIcon.svg'
-              alt='step 1'
-              width={30}
-              height={30}
-            />
-            <p className="text-lg ml-2 text-[#00CBCB]">Add another owner</p>
-          </button>
+          <div className="flex flex-col sm:flex-row justify-between max-w-sm">
+            <button type="button" className="flex items-center mb-12" onClick={() => setNumberOfOwners((prev) => prev + 1)}>  
+              <Image
+                src='icons/plusIcon.svg'
+                alt='step 1'
+                width={30}
+                height={30}
+              />
+              <p className="text-lg ml-2 text-[#00CBCB]">Add another owner</p>
+            </button>
+            {numberOfOwners > 1 && <button type="button" className="flex items-center mb-12" onClick={handleRemoveOwner}>  
+              <Image
+                src='icons/minusIcon.svg'
+                alt='step 1'
+                width={30}
+                height={30}
+              />
+              <p className="text-lg ml-2 text-[#00CBCB]">Remove Owner</p>
+            </button>}
+          </div>
           <div className="flex items-center mb-8">
             <p className="mr-2">Any transaction requires the confirmation of: </p>
               <div className="max-w-xs">
-                <select id="example1" className="block w-full rounded-md border-primary-color border-2 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50">
-                  {optionsList}
+                <select id="example1" className="block w-full rounded-md border-primary-color border-2 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50"
+                  value={confirmations}
+                  onChange={(event) => {
+                    setConfirmations(parseInt(event.target.value));
+                  }}
+                >
+                    {optionsList}
                 </select>
               </div>
             <p className="ml-2">out of X owners(s)</p>
