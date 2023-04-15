@@ -1,23 +1,22 @@
 import Image from 'next/image'
 
-// Temporary Data
-const accounts = [
+const links = [
     {
-        "name": "Seb",
-        "profileImg": "icons/account1.svg"
+        "name": "Dashboard",
+        "profileImg": "icons/dashboardIcon.svg"
     },
     {
-        "name": "Han",
-        "profileImg": "icons/account2.svg"
+        "name": "Accounts",
+        "profileImg": "icons/accountsIcon.svg"
     },
     {
-        "name": "Kimlong",
-        "profileImg": "icons/account3.svg"
+        "name": "Transactions",
+        "profileImg": "icons/transactionIcon.svg"
     },
     {
-        "name": "Matt",
-        "profileImg": "icons/account4.svg"
-    }
+        "name": "Settings",
+        "profileImg": "icons/settingIcon.svg"
+    },
 ]
 
 type AccountProps = {
@@ -29,14 +28,14 @@ function SidebarAccount(props: AccountProps) {
     return (
         <div className="flex flex-col items-center">
             <p className="mb-2 font-semibold">{props.name}</p>
-            <div className="flex items-center justify-center w-20 h-20 border-2 border-slate-100 rounded-2xl hover:bg-[#effff4] shadow">
+            <button className="flex items-center justify-center w-20 h-20 border-2 border-slate-100 rounded-2xl bg-[#F0FCFF] hover:bg-[#bef2ff]">
                 <Image 
                     src={props.profileImg}
                     alt={props.name + ' logo'}
                     width={50}
                     height={50}
                 />
-            </div>
+            </button>
         </div>
     )
 }
@@ -44,12 +43,12 @@ function SidebarAccount(props: AccountProps) {
 function NavList() {
     return (
         <div className='flex flex-col gap-8 my-10'>
-            {accounts.map((account) => {
+            {links.map((link) => {
                 return (
                     <SidebarAccount 
-                        key={account.name} 
-                        name={account.name} 
-                        profileImg={account.profileImg}
+                        key={link.name} 
+                        name={link.name} 
+                        profileImg={link.profileImg}
                     />
                 )
             })}
