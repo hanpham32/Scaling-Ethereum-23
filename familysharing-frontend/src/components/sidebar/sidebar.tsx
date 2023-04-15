@@ -1,6 +1,6 @@
 import FamilyIcon from "../logos/family-logo"
 
-import AccountsList from "./accountsList"
+import NavList from "./navList"
 
 function Sidebar() {
     return (
@@ -9,7 +9,7 @@ function Sidebar() {
                 <FamilyIcon />
                 <h1 className="font-semibold mt-2">FShare</h1>
             </div>
-            <AccountsList />
+            <NavList />
         </div>
     )
 }

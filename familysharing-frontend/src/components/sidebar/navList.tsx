@@ -41,7 +41,7 @@ function SidebarAccount(props: AccountProps) {
     )
 }
 
-function AccountsList() {
+function NavList() {
     return (
         <div className='flex flex-col gap-8 my-10'>
             {accounts.map((account) => {
@@ -57,4 +57,4 @@ function AccountsList() {
     )
 }
 
-export default AccountsList
+export default NavList
